@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="progressBars">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Front End Assignment - Progress Bars - AngularJS</title>
+        <script src="/js/vendor.bundle.js"></script>
+        <script src="/js/app.bundle.js"></script>
+        </head>
+    <body>
+        <div id="main-wrapper">
+        	<div id="progressbars" class="col" ng-controller="barController as pb">
+                <h1><span>Progress Bars</span></h1>
+                <div id="preload" ng-hide="pb.NoPreload"><img ng-src="/images/preloader.gif" /></div>
+                <div id="Allbars" class="col-100" ng-show="pb.NoPreload">
+                    <div ng-repeat="item in pb.progress track by $index" id="{{item.id}}" class="progress-bars" data-progress="{{item.rate}}" data-percent="{{item.percent}}" ng-class="{ active : item.id == selectedBar.id }">
+                        <div class="progress-rate" style="width: {{item.percent}}%;" ng-class="{ overlimit : item.overlimit == true }"></div>
+                        <span>{{item.percent}}%</span>
+                    </div>
+                </div>
+                <div id="bar-container" ng-show="pb.NoPreload">
+                        <div class="col-30">
+                          <select id="selector" ng-model="selectedBar.id" ng-options="bar.id as bar.id for bar in pb.progress">
+                          </select>
+                        </div>
+                        <div class="col-70">
+                            <div id="buttons">
+                                <button type="button" ng-repeat="item in pb.button" ng-click='pb.updateButton(item, selectedBar.id)'>{{item}}</button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                </div>
+        	</div>
+            <p id="author">Developed by: Britta Mary Oblan | brittaoblan@gmail.com<p>
+        </div>
+
+    </body>
+</html>
