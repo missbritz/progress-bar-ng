@@ -2,7 +2,8 @@
 
 - Built with AngularJS
 - Linted with JSHint
-- Minified for
+- Pre compiled with SASS
+- Minified js/css files
 
 To run
 <pre>npm start</pre>
