@@ -5,7 +5,7 @@
 - Pre compiled with SASS
 - Bundled and minified js/css files with webpack
 
-To run ( view at http://localhost:3000/ )
+To run ( runs on port 3000 - http://localhost:3000/ )
 <pre>npm start</pre>
 or
 <pre>node server.js</pre>
