@@ -85,7 +85,7 @@
                                 newProgRate = newNum;
                                 maxreached = false;
                            }else if( newProg > 100 ){
-                                nProg = 100;
+                                nProg = newProg;
                                 newProgRate = newNum;
                                 maxreached = true;
                            }else{
